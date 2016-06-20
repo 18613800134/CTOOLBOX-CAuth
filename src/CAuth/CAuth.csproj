@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6EF3049-3B6F-42D9-965B-3E6FB5D108A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAuth</RootNamespace>
+    <AssemblyName>CAuth</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CAM.Common.Convert">
+      <HintPath>..\..\..\CAM.Common.Convert\src\CAM.Common.Convert\bin\Release\CAM.Common.Convert.dll</HintPath>
+    </Reference>
+    <Reference Include="CAM.Common.Data">
+      <HintPath>..\..\..\CAM.Common.Data\src\CAM.Common.Data\bin\Release\CAM.Common.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="CAM.Common.Error">
+      <HintPath>..\..\..\CAM.Common.Error\src\CAM.Common.Error\bin\Release\CAM.Common.Error.dll</HintPath>
+    </Reference>
+    <Reference Include="CAM.Common.QueryMaker">
+      <HintPath>..\..\..\CAM.Common.QueryMaker\src\CAM.Common.QueryMaker\bin\Release\CAM.Common.QueryMaker.dll</HintPath>
+    </Reference>
+    <Reference Include="CAM.Core">
+      <HintPath>..\..\..\CAM.Core\src\CAM.Core\bin\Release\CAM.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CAM.General">
+      <HintPath>..\..\..\CAM.General\src\CAM.General\bin\Release\CAM.General.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\CAM-DEV-Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\CAM-DEV-Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Aggregate\Aggregate.cs" />
+    <Compile Include="Business\Aggregate\CAuthPassport.cs" />
+    <Compile Include="Business\DBContext\DBContextCAuth.cs" />
+    <Compile Include="Business\Interface\CAuthPassport.cs" />
+    <Compile Include="Business\Rule\CAuthPassport.cs" />
+    <Compile Include="Model\Entity\CAuthPassport.cs" />
+    <Compile Include="Model\Factory\CAuthPassport.cs" />
+    <Compile Include="Model\Mixin\CAuthPassport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Filter\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
